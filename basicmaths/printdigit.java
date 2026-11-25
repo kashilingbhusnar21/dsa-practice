@@ -3,21 +3,41 @@ package basicmaths;
 public class printdigit {
 
 
-    static void printdigit(int num ){
+    static void printdigit(int arr[] ){
 
-        while(num>0){
-            //extract last digit
+        int n=arr.length;
 
-           int  digit=num%10;
-            System.out.println(digit);
-            //removing the last digit
-            num=num/10;
+        int max=arr[0];
+
+
+        for(int i=1;i<n;i++){
+            if(arr[i]>max){
+                max=arr[i];
+            }
+
         }
+
+        int secondmax=Integer.MIN_VALUE;
+
+        for(int i=0;i<n;i++){
+            if(arr[i]>secondmax && arr[i]<max){
+                secondmax=arr[i];
+            }
+        }
+        if(secondmax==Integer.MIN_VALUE){
+            System.out.println("des not exists");
+        }
+        else{
+            System.out.println("secondmax ; "+ secondmax);
+        }
+
+
+
     }
 
     public static void main(String[] args) {
-
-        printdigit(12345);
+       int arr[]={1,2,3,4,5,6};
+       printdigit(arr);
 
     }
 }
