@@ -1,23 +1,29 @@
 package basicmaths;
-
+import java.util.Scanner;
 public class day1{
     public static void main(String[]args) {
 
-// int num=5;
 
-        int num = 15;
-        int rev=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.println(" enter your number ");
+        int n=sc.nextInt();
 
-      while(num>0){
+        //count the all print numbers prime
 
-          int digit=num%10;
-          rev=(rev*10)+digit;
+        for(int num=2;num<=n;num++){
 
-          num=num/10;
+            Boolean isPrime=true;
 
+            for(int i=2;i<num;i++){
+                if(num % i ==0 ){
+                    isPrime=false;
+                    break;
+                }
+            }
+            if(isPrime){
+                System.out.println(num + " ");
+            }
+        }
 
-      }
-        System.out.println(rev);
     }
-
 }
