@@ -3,23 +3,27 @@ package ARRAY;
 public class besttimeforbuycell {
     public static void main(String[] args) {
 
-       int arr[]={1,3,4,5,6,2,9};
+        int arr[]={1,4,6,77,8,9,8,7,6,5,5,5,5,5};
+        int n=arr.length;
 
-       int n= arr.length;
+        if(arr == null || n ==0){
+            return ;
+        }
 
-       int min=arr[0];
+        //min profitt
+        int min=arr[0];
+        int profit =0;
 
-       int profit=0;
+        for(int i =0;i<n;i++){
 
-       for(int i=0;i<n;i++) {
+            //current profit
+            int currentprofit=arr[i]-min;
 
-           int currentprofit = arr[i] - min;
+            profit=Math.max(profit,currentprofit);
 
-           profit = Math.max(profit, currentprofit);
-
-           min = Math.min(arr[i], min);
-
-       }System.out.println(" the current profit is "+ profit);
+            min=Math.min(arr[i],min);
+        }
+        System.out.println(" profit "+ profit );
 
     }
 }
