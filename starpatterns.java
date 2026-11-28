@@ -92,21 +92,29 @@ public class starpatterns {
     }
         static void pattern6(int n) {
 
-            for (int row = 1; row <=n; row++) {
+           for(int row=1;row<=n;row++){
 
-            for(int i=1;i<=2*row-1;i++){
-                System.out.print(" ");
-            }
+               //for sapce
+               for(int s =1;s<=row-1;s++){
+                   System.out.print(" ");
+               }
+               for(int col =1;col<=n-row+1;col++){
+                   System.out.print("* ");
+               }
+               System.out.println();
+           }
+           for(int row=1;row<=n;row++){
 
+               //for space
 
-
-                for (int col = 1; col <=2*row-1; col++) {
-
-                    System.out.print("*");
-                }
-                System.out.println();
-
-            }
+               for(int s= 1;s<=n-row;s++){
+                   System.out.print(" ");
+               }
+               for(int col=1;col<=row;col++){
+                   System.out.print("* ");
+               }
+               System.out.println();
+           }
         }
     }
 
